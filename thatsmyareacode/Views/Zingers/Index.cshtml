@@ -1,94 +1,100 @@
 ﻿@model IEnumerable<thatsmyareacode.Models.Zinger>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "That's My Area Code!";
 }
 
-<h2>Index</h2>
+<div class="jumbotron">
+    <h1>That's My Area Code!</h1>
+    <p class="lead">Add something here about application.</p>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-
-    @using (Html.BeginForm())
-    {
+<div class="well">
     <p>
-        Genre: @Html.DropDownList("zingerGenre", "All")
+        @Html.ActionLink("Create New", "Create")
 
-        User Name: @Html.TextBox("SearchString")
-        <input type="submit" value="Filter" />
+        @using (Html.BeginForm())
+        {
+        <p>
+            Genre: @Html.DropDownList("zingerGenre", "All")
 
-        Area Code: @Html.TextBox("zingerAreaCode")
-        <input type="submit" value="Filter" />
-    </p>
-    }
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ZingerMessage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZingerImage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ZingerUserName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AreaCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UpVote)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DownVote)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Favorite)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TimeCreated)
-        </th>
-        <th></th>
-    </tr>
+            User Name: @Html.TextBox("SearchString")
+            <input type="submit" value="Filter" />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ZingerMessage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ZingerImage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ZingerUserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AreaCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UpVote)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DownVote)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Favorite)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TimeCreated)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ZingerID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ZingerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ZingerID })
-        </td>
-    </tr>
-}
+            Area Code: @Html.TextBox("zingerAreaCode")
+            <input type="submit" value="Filter" />
+        </p>
+        }
+    
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ZingerMessage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ZingerImage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ZingerUserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AreaCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpVote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DownVote)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Favorite)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TimeCreated)
+                </th>
+                <th></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZingerMessage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZingerImage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ZingerUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AreaCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpVote)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DownVote)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Favorite)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeCreated)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
