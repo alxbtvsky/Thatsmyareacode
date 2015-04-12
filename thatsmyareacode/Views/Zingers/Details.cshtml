@@ -1,0 +1,90 @@
+﻿@model thatsmyareacode.Models.Zinger
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Zinger</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ZingerMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZingerMessage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZingerImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZingerImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZingerUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZingerUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpVote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpVote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DownVote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DownVote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Favorite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Favorite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeCreated)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ZingerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
