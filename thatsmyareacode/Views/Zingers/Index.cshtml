@@ -78,7 +78,8 @@
                         <input type="submit" value="Change Area Code" class="btn btn-success" />
                     </p>
                     }
-                    <table class="table">
+              
+                  <!-- <table class="table">--> 
                        <!-- <tr>
                             <th>
                                 @Html.DisplayNameFor(model => model.ZingerMessage)
@@ -112,47 +113,36 @@
 
                         @foreach (var item in Model)
                         {
-                            
-    <div class="well">
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ZingerMessage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ZingerImage)
-            </td>
-            <td>
+                            <div class="well" id="#zingerWells">
+                                <span>@Html.DisplayFor(modelItem => item.AreaCode): @Html.DisplayFor(modelItem => item.ZingerMessage)</span>
+                                        
+                                   
+                                        @Html.DisplayFor(modelItem => item.ZingerImage)
+                                 
 
-                @Html.DisplayFor(modelItem => item.ZingerUserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AreaCode)
-            </td>
-            <td>
-                <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
-</td>
-            <td>
-                <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
-</td>
-            <td>
-                <button type="button" class="glyphicon glyphicon-star-empty" aria-hidden="true">@Html.DisplayFor(modelItem => item.Favorite)</button>
-</td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeCreated)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
-            </td>
-        </tr>
-    </div>
+                                        @Html.DisplayFor(modelItem => item.ZingerUserName)
+                                    
+                                        @Html.DisplayFor(modelItem => item.Genre)
+                                   
+                                       
+                                   
+                                        <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
+                                  
+                                        <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
+                                   
+                                        <button type="button" class="glyphicon glyphicon-star-empty" aria-hidden="true">@Html.DisplayFor(modelItem => item.Favorite)</button>
+                                    
+                                        @Html.DisplayFor(modelItem => item.TimeCreated)
+                                   
+                                    <!--    @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
+                                -->
+
+                            </div>
                         }
 
-                    </table>
+  
                 </div>
             </div>
         </div>
