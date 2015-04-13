@@ -273,7 +273,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\App_LocalResources\" />
     <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
