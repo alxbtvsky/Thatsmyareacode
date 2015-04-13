@@ -51,12 +51,12 @@
             <div class="sidebar-module sidebar-module-inset">
                 <div class="well">
                     <p>Genres will go here</p>
-                    <button class="btn btn-success">News</button><br/>
-                    <button class="btn btn-warning">Sports</button><br/>
-                    <button class="btn btn-primary">Humor</button><br/>
+                    <button class="btn btn-default">News</button><br/>
+                    <button class="btn btn-default">Sports</button><br/>
+                    <button class="btn btn-default">Humor</button><br/>
                     <button class="btn btn-default">Random</button><br/>
-                    <button class="btn btn-info">Romance</button><br/>
-                    <button class="btn btn-danger">Popular</button><br/>
+                    <button class="btn btn-default">Romance</button><br/>
+                    <button class="btn btn-default">Popular</button><br/>
 
                 </div>
             </div>
@@ -114,25 +114,24 @@
                         @foreach (var item in Model)
                         {
                             <div class="well" id="#zingerWells">
-                                <span>@Html.DisplayFor(modelItem => item.AreaCode): @Html.DisplayFor(modelItem => item.ZingerMessage)</span>
-                                        
-                                   
-                                        @Html.DisplayFor(modelItem => item.ZingerImage)
-                                 
+                                <span><h3>@Html.DisplayFor(modelItem => item.AreaCode): @Html.DisplayFor(modelItem => item.ZingerImage) @Html.DisplayFor(modelItem => item.ZingerMessage)</h3></span><span>@Html.DisplayFor(modelItem => item.TimeCreated)</span>
+                                <br />
+                                <span>Genre: @Html.DisplayFor(modelItem => item.Genre)</span>     
+                                <br />
+                                <span>
+                                   User: @Html.DisplayFor(modelItem => item.ZingerUserName)
+                                </span>
+                                <br />
+                                <span>
+                                    <div id="#opinionBtns" style="color:purple;">
+                                    <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
 
-                                        @Html.DisplayFor(modelItem => item.ZingerUserName)
-                                    
-                                        @Html.DisplayFor(modelItem => item.Genre)
-                                   
-                                       
-                                   
-                                        <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
-                                  
-                                        <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
-                                   
-                                        <button type="button" class="glyphicon glyphicon-star-empty" aria-hidden="true">@Html.DisplayFor(modelItem => item.Favorite)</button>
-                                    
-                                        @Html.DisplayFor(modelItem => item.TimeCreated)
+                                    <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
+
+                                    <button type="button" class="glyphicon glyphicon-star-empty" aria-hidden="true">@Html.DisplayFor(modelItem => item.Favorite)</button>
+                                    </div>
+                                 </span>
+                                      
                                    
                                     <!--    @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
                                         @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
