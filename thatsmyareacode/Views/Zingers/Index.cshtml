@@ -6,100 +6,171 @@
 
 <div class="jumbotron">
     <h1>That's My Area Code!</h1>
-    <p class="lead">What's going on in <strong>your</strong> area code?</p>
 </div>
 
-<div class="row">
-    <div class="col-md-2"></div>
-<div class="col-md-10">
-    <div class="well">
-        <p>
-            <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
+<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
 
-            @using (Html.BeginForm())
-            {
-            <p>
-                Genre: @Html.DropDownList("zingerGenre", "All")
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
 
-                User Name: @Html.TextBox("SearchString")
-                <input type="submit" value="Filter" />
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="/Content/App_LocalResources/carouselOne.jpg" alt="0">
+        </div>
+        <div class="item">
+            <img src="/Content/App_LocalResources/courtwithwords.jpg" alt="1">
+            <div class="carousel-caption">
+                <h3></h3>
+            </div>
+        </div>
 
-                Area Code: @Html.TextBox("zingerAreaCode")
-                <input type="submit" value="Change Area Code" class="btn btn-success" />
-            </p>
-            }
-
-            <table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ZingerMessage)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ZingerImage)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ZingerUserName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Genre)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.AreaCode)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.UpVote)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.DownVote)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Favorite)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.TimeCreated)
-                    </th>
-                    <th></th>
-                </tr>
-
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ZingerMessage)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ZingerImage)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ZingerUserName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Genre)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.AreaCode)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.UpVote)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DownVote)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Favorite)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.TimeCreated)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
-                        </td>
-                    </tr>
-                }
-
-            </table>
+        <div class="item">
+            <img src="/Content/App_LocalResources/carouselThree.jpg" alt="2">
+            <div class="carousel-caption">
+                <h3></h3>
+                <p></p>
+            </div>
         </div>
     </div>
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar-module sidebar-module-inset">
+                <div class="well">
+                    <p>Genres will go here</p>
+                    <button class="btn btn-success">News</button><br/>
+                    <button class="btn btn-warning">Sports</button><br/>
+                    <button class="btn btn-primary">Humor</button><br/>
+                    <button class="btn btn-default">Random</button><br/>
+                    <button class="btn btn-info">Romance</button><br/>
+                    <button class="btn btn-danger">Popular</button><br/>
+
+                </div>
+            </div>
         </div>
+        <div class="col-md-10">
+            <div class="well">
+                <p>
+                    <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
+
+                    @using (Html.BeginForm())
+                    {
+                    <p>
+                        Genre: @Html.DropDownList("zingerGenre", "All")
+
+                        User Name: @Html.TextBox("SearchString")
+                        <input type="submit" value="Filter" />
+
+                        Area Code: @Html.TextBox("zingerAreaCode")
+                        <input type="submit" value="Change Area Code" class="btn btn-success" />
+                    </p>
+                    }
+                    <table class="table">
+                       <!-- <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ZingerMessage)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ZingerImage)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ZingerUserName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Genre)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.AreaCode)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UpVote)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.DownVote)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Favorite)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.TimeCreated)
+                            </th>
+                            <th></th>
+                        </tr>-->
+
+                        @foreach (var item in Model)
+                        {
+                            
+    <div class="well">
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZingerMessage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZingerImage)
+            </td>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.ZingerUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaCode)
+            </td>
+            <td>
+                <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
+</td>
+            <td>
+                <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
+</td>
+            <td>
+                <button type="button" class="glyphicon glyphicon-star-empty" aria-hidden="true">@Html.DisplayFor(modelItem => item.Favorite)</button>
+</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeCreated)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
+            </td>
+        </tr>
+    </div>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/bootstrap-transition.js"></script>
+<script src="../assets/js/bootstrap-alert.js"></script>
+<script src="../assets/js/bootstrap-modal.js"></script>
+<script src="../assets/js/bootstrap-dropdown.js"></script>
+<script src="../assets/js/bootstrap-scrollspy.js"></script>
+<script src="../assets/js/bootstrap-tab.js"></script>
+<script src="../assets/js/bootstrap-tooltip.js"></script>
+<script src="../assets/js/bootstrap-popover.js"></script>
+<script src="../assets/js/bootstrap-button.js"></script>
+<script src="../assets/js/bootstrap-collapse.js"></script>
+<script src="../assets/js/bootstrap-carousel.js"></script>
+<script src="../assets/js/bootstrap-typeahead.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#myCarousel").carousel();
+    });
+</script>
