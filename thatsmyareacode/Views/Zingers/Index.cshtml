@@ -47,7 +47,7 @@
         <div class="col-md-2">
             <div class="sidebar-module sidebar-module-inset">
                 <div class="well">
-                    <h3>Genres:</h3>
+                    <center><h3>Genres:</h3></center>
                     <button class="btn btn-default">News</button><br/>
                     <button class="btn btn-default">Sports</button><br/>
                     <button class="btn btn-default">Humor</button><br/>
@@ -60,37 +60,41 @@
         </div>
         <div class="col-md-10">
             <div class="well">
-                <p>
-                    <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
+                
 
+
+                <center>
                     @using (Html.BeginForm())
                     {
-                    <p>
-                        Genre: @Html.DropDownList("zingerGenre", "All")
+                        <p>
 
-                        User Name: @Html.TextBox("SearchString")
-                        <input type="submit" value="Filter" />
+                            Genre: @Html.DropDownList("zingerGenre", "All")
 
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#areaCodeModal">Change Area Code</button>
-                        <div class="modal fade" id="areaCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">Travelling is Fun...</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        Area Code: @Html.TextBox("zingerAreaCode")
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        <input type="submit" value="Go There!" class="btn btn-success"/>
+                            User Name: @Html.TextBox("SearchString")
+                            <input type="submit" value="Filter" />
+
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#areaCodeModal">Change Area Code</button>
+                            <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
+                            <div class="modal fade" id="areaCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Travelling is Fun...</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Area Code: @Html.TextBox("zingerAreaCode")
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <input type="submit" value="Go There!" class="btn btn-success" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </p>
+                        </p>
                     }
+                </center>
               
                   <!-- <table class="table">--> 
                        <!-- <tr>
@@ -121,7 +125,7 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.TimeCreated)
                             </th>
-                            <th></th>
+                            <th></th>   
                         </tr>-->
 
                         @foreach (var item in Model)
