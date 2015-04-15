@@ -7057,3 +7057,7 @@ a.list-group-item-danger.active:focus {
 .panel-info .panel-heading {
   border-color: #000;
 }
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
