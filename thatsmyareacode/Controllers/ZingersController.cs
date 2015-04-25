@@ -19,11 +19,19 @@ namespace thatsmyareacode.Controllers
         {
             var GenreLst = new List<string>();
 
+            GenreLst.Add("Humor");
+            GenreLst.Add("News");
+            GenreLst.Add("Popular");
+            GenreLst.Add("Random");
+            GenreLst.Add("Romance");
+            GenreLst.Add("Sports");
+           
+
             var GenreQyr = from d in db.Zingers
                            orderby d.Genre
                            select d.Genre;
 
-            GenreLst.AddRange(GenreQyr.Distinct());
+            /*GenreLst.AddRange(GenreQyr.Distinct());*/
             ViewBag.zingerGenre = new SelectList(GenreLst);
 
             var zingers = from z in db.Zingers
@@ -43,6 +51,7 @@ namespace thatsmyareacode.Controllers
             {
                 zingers = zingers.Where(x => x.Genre == zingerGenre);
             }
+            
 
             return View(zingers);
         }
@@ -61,6 +70,8 @@ namespace thatsmyareacode.Controllers
             }
             return View(zinger);
         }
+
+    
 
         // GET: Zingers/Create
         public ActionResult Create()
