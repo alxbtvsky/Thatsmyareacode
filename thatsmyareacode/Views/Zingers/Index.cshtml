@@ -108,69 +108,76 @@
                     }
                 </center>
               
-                  <!-- <table class="table">--> 
-                       <!-- <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ZingerMessage)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ZingerImage)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ZingerUserName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Genre)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.AreaCode)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.UpVote)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.DownVote)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Favorite)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.TimeCreated)
-                            </th>
-                            <th></th>   
-                        </tr>-->
+                <table class="table" id="zingerTable">
+                   <!-- 
+                     <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ZingerMessage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZingerImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ZingerUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpVote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DownVote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Favorite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeCreated)
+            </th>
+            <th></th>
+        </tr>
+                    -->
+                    @foreach (var item in Model)
+                    {
+                     
+                        <tr>
+                            <td>
+                                <div class="well" id="zingerWells">
+                                    <span><h1>@Html.DisplayFor(modelItem => item.AreaCode): @Html.DisplayFor(modelItem => item.ZingerImage) @Html.DisplayFor(modelItem => item.ZingerMessage)</h1></span><span>@Html.DisplayFor(modelItem => item.TimeCreated)</span>
+                                    <br />
+                                    <span>Genre: @Html.DisplayFor(modelItem => item.Genre)</span>
+                                    <br />
+                                    <span>
+                                        User: @Html.DisplayFor(modelItem => item.ZingerUserName)
+                                    </span>
+                                    <br />
+                                    <span>
+                                        <div id="#opinionBtns" style="color:purple;">
+                                            <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
 
-                        @foreach (var item in Model)
-                        {
-                            <div class="well" id="#zingerWells">
-                                <span><h1>@Html.DisplayFor(modelItem => item.AreaCode): @Html.DisplayFor(modelItem => item.ZingerImage) @Html.DisplayFor(modelItem => item.ZingerMessage)</h1></span><span>@Html.DisplayFor(modelItem => item.TimeCreated)</span>
-                                <br />
-                                <span>Genre: @Html.DisplayFor(modelItem => item.Genre)</span>     
-                                <br />
-                                <span>
-                                   User: @Html.DisplayFor(modelItem => item.ZingerUserName)
-                                </span>
-                                <br />
-                                <span>
-                                    <div id="#opinionBtns" style="color:purple;">
-                                    <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
+                                            <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
 
-                                    <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
+                                            <button type="button" class="glyphicon glyphicon-star-empty" aria-hidden="true">@Html.DisplayFor(modelItem => item.Favorite)</button>
+                                        </div>
+                                    </span>
 
-                                    <button type="button" class="glyphicon glyphicon-star-empty" aria-hidden="true">@Html.DisplayFor(modelItem => item.Favorite)</button>
-                                    </div>
-                                 </span>
-                                      
-                                   
+
                                     <!--    @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
-                                        @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
-                                        @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
-                                -->
+                                @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
+                        -->
 
-                            </div>
-                        }
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    }
 
-  
+                </table>
                 </div>
             </div>
         </div>
@@ -205,4 +212,12 @@
 
   
 </script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script>
+    $(function () {
+        $("#zingerTable").DataTable();
+    })
+</script>
+
 
