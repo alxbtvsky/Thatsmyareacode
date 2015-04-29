@@ -6634,7 +6634,7 @@ button.close {
 }
 .btn-default {
   background-color:#8000FF;
-  width:125px;
+  width:100px;
   /*background-image: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
   background-image: -o-linear-gradient(#484e55, #3a3f44 60%, #313539);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#484e55), color-stop(60%, #3a3f44), to(#313539));

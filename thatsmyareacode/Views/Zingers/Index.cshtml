@@ -6,58 +6,17 @@
 
 
     <!--Add padding above this-->
-    <div class="wrapper">
-        <center><img src="/Content/Images/bannerPic.jpg" class="img-responsive" style="border: 12px double #8904B1"> </center>
-  
-    </div>
-  
-
-
-<!---
-<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides --
-    <div class="carousel-inner">
-        <div class="item active">
-            <img src="/Content/Images/carouselFirst.jpg" alt="0">
-        </div>
-        <div class="item">
-            <img src="/Content/Images/carouselSecondSmall.jpg" alt="1">
-            <div class="carousel-caption">
-                <h3></h3>
-            </div>
-        </div>
-
-        <div class="item" style="align-items:center;">
-            <img src="/Content/Images/carouselThird.jpg" alt="2">
-            <div class="carousel-caption">
-                <h3></h3>
-                <p>Pick a Genre to refine your search</p>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-    </a>
-    <a class="carousel-control right" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-    </a>
-</div>-->
-<hr />
-
+    <div class="wrapper" style="margin-top:20px">
+        <center><img src="/Content/Images/bannerPic.jpg" class="img-responsive" style="border: 12px double #8000FF"> </center>
+      </div>
+  <hr />
 
     <div class="row">
         <div class="col-md-2">
             <div class="sidebar-module sidebar-module-inset">
                 <div class="well">
-                    <center><h3>Genres:</h3></center>
-                    <button id="genreBtns" class="btn btn-default" onclick="ViewBag.zingerGenre = 'All'">All</button><br />
+                    <center><h3>Genres</h3></center>
+                                        <button id="genreBtns" class="btn btn-default" onclick="ViewBag.zingerGenre = 'All'">All</button><br />
                     <button id="genreBtns" class="btn btn-default" onclick="ViewBag.zingerGenre = 'Humor'">Humor</button><br />
                     <button id="genreBtns" class="btn btn-default">News</button><br/>
                     <button id="genreBtns" class="btn btn-default">Popular</button><br/>
@@ -68,41 +27,39 @@
             </div>
         </div>
         <div class="col-md-10">
-            <div class="well">
-                
-                
-
-
+            <div class="well" >
                 <center>
                     @using (Html.BeginForm())
                     {
                         <p>
-
-                            Genre: @Html.DropDownList("zingerGenre", "All")
-
-
-                            User Name: @Html.TextBox("SearchString")
-                            <input type="submit" value="Filter" />
-
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#areaCodeModal">Change Area Code</button>
-                            <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
-                            <div class="modal fade" id="areaCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Travelling is Fun...</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            Area Code: @Html.TextBox("zingerAreaCode")
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <input type="submit" value="Go There!" class="btn btn-success" />
-                                            <button type="button" class="btn btn-primary" id="allCodes">All Area Codes!</button>
+                            <div class="row">
+                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#areaCodeModal">Change Area</button>
+                                <div class="modal fade" id="areaCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Travelling is Fun...</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                Area Code: @Html.TextBox("zingerAreaCode")
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <input type="submit" value="Go There!" class="btn btn-success" />
+                                                <button type="button" class="btn btn-primary" id="allCodes">All Area Codes!</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                Genre: @Html.DropDownList("zingerGenre", "All")
+
+
+                                User Name: @Html.TextBox("SearchString")
+                                <input type="submit" value="Filter" />
+
+
+                                <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
                             </div>
                         </p>
                     }
@@ -157,7 +114,7 @@
                                     </span>
                                     <br />
                                     <span>
-                                        <div id="#opinionBtns" style="color:purple;">
+                                        <div id="opinionBtns" style="color:purple;">
                                             <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true">@Html.DisplayFor(modelItem => item.UpVote)</button>
 
                                             <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true">@Html.DisplayFor(modelItem => item.DownVote)</button>
@@ -220,5 +177,3 @@
         $("#zingerTable").DataTable();
     })
 </script>
-
-
