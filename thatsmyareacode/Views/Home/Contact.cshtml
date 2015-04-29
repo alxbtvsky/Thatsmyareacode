@@ -6,6 +6,7 @@
     <title>Contact Us</title>
     <style>
         #map-canvas {
+            border-radius:5px;
             width: 400px;
             height: 300px;
         }
@@ -34,13 +35,13 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label">Full name</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" name="fullName" />
+                        <input type="text" class="form-control" name="fullName" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Email</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" name="email" />
+                        <input type="text" class="form-control" name="email" required/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -52,7 +53,7 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label">Message</label>
                     <div class="col-md-6">
-                        <textarea class="form-control" name="content" rows="5"></textarea>
+                        <textarea class="form-control" name="content" rows="5" required></textarea>
                     </div>
                 </div>
                 <!-- #messages is where the messages are placed inside -->
@@ -74,15 +75,6 @@
 
             <div id="map-canvas"></div>
 
-
-
-
-
-
-
-
-
-
         </div>
 
     </div>
@@ -92,7 +84,7 @@
         Louisville, KY<br />
     </address>
 
-    <script>
+   @* <script>
         $(document).ready(function () {
             $('#contactForm').bootstrapValidator({
                 container: '#messages',
@@ -145,3 +137,4 @@
             });
         });
     </script>
+*@
