@@ -4,7 +4,7 @@
     ViewBag.Title = "That's My Area Code!";
 }
 
-<style>
+<!--<style>
     .btn-custom {
         background-color: #8000FF;
         color: #ffffff;
@@ -61,7 +61,7 @@ fieldset[disabled] .btn-custom.active {
         width: 100px;
     }
 
-</style>
+</style>-->
 
     <!--Add padding above this-->
     <div class="wrapper" style="margin-top:20px">
@@ -133,7 +133,7 @@ fieldset[disabled] .btn-custom.active {
                     }
                 </center>
               
-                <table class="table" id="zingerTable">
+                <!--<table class="table" id="zingerTable">-->
                    <!-- 
                      <tr>
             <th>
@@ -173,39 +173,45 @@ fieldset[disabled] .btn-custom.active {
                         var imgsrc = item.ZingerImage;
                       
 
-                        <tr>
-                            <td>
-
                                 <div class="well" id="zingerWells">
-                                    <span><h1>@Html.DisplayFor(modelItem => item.AreaCode): @if (imgsrc != null) { <img src="@imgsrc" style="width:300px; height:300px" /> } @Html.DisplayFor(modelItem => item.ZingerMessage)</h1></span><span>@Html.DisplayFor(modelItem => item.TimeCreated)</span>
-                                    <br />
-                                    <span>Genre: @Html.DisplayFor(modelItem => item.Genre)</span>
-                                    <br />
-                                    <span>
-                                        User: @Html.DisplayFor(modelItem => item.ZingerUserName)
-                                    </span>
-                                    <br />
-                                    <span>
-                                        
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                        <span><h1>@Html.DisplayFor(modelItem => item.AreaCode): </h1></span>
+
+                                        <span>@Html.DisplayFor(modelItem => item.TimeCreated)</span>
+                                        <br />
+                                        <span>Genre: @Html.DisplayFor(modelItem => item.Genre)</span>
+                                        <br />
+                                        <span>
+                                            User: @Html.DisplayFor(modelItem => item.ZingerUserName)
+                                        </span>
+                                        <br />
+                                        <span>
+
                                             <button type="button" class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="color:#8000FF">@Html.DisplayFor(modelItem => item.UpVote)</button>
 
-                                        <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true" style="color:#8000FF">@Html.DisplayFor(modelItem => item.DownVote)</button>
-                                       
-                                    </span>
+                                            <button type="button" class="glyphicon glyphicon-thumbs-down" aria-hidden="true" style="color:#8000FF">@Html.DisplayFor(modelItem => item.DownVote)</button>
 
+                                        </span>
+                                            </div>
+                                            <div class="col-md-5">
+                                                
+                                                    @if (imgsrc != null)
+                                                    { <img src="@imgsrc" style="width:300px; height:300px" /> }
+                                                                                                              
+                                                <span><h2>@Html.DisplayFor(modelItem => item.ZingerMessage)</h2></span>
+                                            </div>
 
-                                    <!--    @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
-                                @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
-                        -->
+                                        <!--    @Html.ActionLink("Edit", "Edit", new { id = item.ZingerID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ZingerID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ZingerID })
+            -->
+
+                                    </div>
 
                                 </div>
-                                
-                            </td>
-                        </tr>
                     }
 
-                </table>
                 </div>
             </div>
         </div>
