@@ -4,6 +4,12 @@
     ViewBag.Title = "That's My Area Code!";
 }
 
+<style>
+    .btn{background-color:#8000FF;
+        width:100px
+    }
+</style>
+
 
     <!--Add padding above this-->
     <div class="wrapper" style="margin-top:20px">
@@ -43,7 +49,9 @@
                     {
                         <p>
                             <div class="row">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#areaCodeModal">Change Area</button>
+                                <div class="col-sm-3">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#areaCodeModal">Change Area</button>
+                                </div>
                                 <div class="modal fade" id="areaCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -64,13 +72,15 @@
                                 </div>
                                 @*Genre: @Html.DropDownList("zingerGenre", "All")*@
 
+                                <div class="col-sm-6">
+                                    User Name: @Html.TextBox("SearchString")
+                                    <input type="submit" value="Filter" />
+                                </div>
 
-                                User Name: @Html.TextBox("SearchString")
-                                <input type="submit" value="Filter" />
-
-
-                                <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
-                            </div>
+                                <div class="col-sm-3">
+                                    <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
+                                </div>
+                               </div>
                         </p>
                     }
                 </center>
