@@ -11,21 +11,31 @@
       </div>
   <hr />
 
+
     <div class="row">
         <div class="col-md-2">
             <div class="sidebar-module sidebar-module-inset">
                 <div class="well">
                     <center><h3>Genres</h3></center>
-                                        <button id="genreBtns" class="btn btn-default" onclick="ViewBag.zingerGenre = 'All'">All</button><br />
+                                        @*<button id="genreBtns" class="btn btn-default" onclick="ViewBag.zingerGenre = 'All'">All</button><br />
                     <button id="genreBtns" class="btn btn-default" onclick="ViewBag.zingerGenre = 'Humor'">Humor</button><br />
-                    <button id="genreBtns" class="btn btn-default">News</button><br/>
+                    <button id="genreBtns" class="btn btn-default" onclick="zingerGenre" value="News">News</button><br/>
                     <button id="genreBtns" class="btn btn-default">Popular</button><br/>
                     <button id="genreBtns" class="btn btn-default">Random</button><br />
                     <button id="genreBtns" class="btn btn-default">Romance</button><br />
-                    <button id="genreBtns" class="btn btn-default">Sports</button><br />
+                    <button id="genreBtns" class="btn btn-default">Sports</button><br />*@
+                    @Html.ActionLink("All", "Index", "Zingers", new { zingerGenre = "" }, new { @class = "btn" })
+                    @Html.ActionLink("Humor", "Index", "Zingers", new { zingerGenre = "Humor" }, new { @class = "btn" })
+                    @Html.ActionLink("News", "Index", "Zingers", new { zingerGenre = "News" }, new { @class = "btn" })
+                    @Html.ActionLink("Popular", "Index", "Zingers", new { zingerGenre = "Popular" }, new { @class = "btn" })
+                    @Html.ActionLink("Random", "Index", "Zingers", new { zingerGenre = "Random" }, new { @class = "btn" })
+                    @Html.ActionLink("Romance", "Index", "Zingers", new { zingerGenre = "Romance" }, new { @class = "btn" })
+                    @Html.ActionLink("Sports", "Index", "Zingers", new { zingerGenre = "Sports" }, new { @class = "btn" })
+                    @Html.ActionLink("Comedy", "Index", "Zingers", new { zingerGenre = "Comedy" }, new { @class = "btn" })
                 </div>
             </div>
         </div>
+
         <div class="col-md-10">
             <div class="well" >
                 <center>
@@ -52,7 +62,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                Genre: @Html.DropDownList("zingerGenre", "All")
+                                @*Genre: @Html.DropDownList("zingerGenre", "All")*@
 
 
                                 User Name: @Html.TextBox("SearchString")

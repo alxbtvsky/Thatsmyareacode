@@ -51,6 +51,11 @@ namespace thatsmyareacode.Controllers
             {
                 zingers = zingers.Where(x => x.Genre == zingerGenre);
             }
+
+            //if(!string.IsNullOrEmpty(zingerGenre))
+            //{
+            //    zingers = zingers.Where(x => x.Genre == zingerGenre);
+            //}
             
 
             return View(zingers);
