@@ -4,6 +4,13 @@
     ViewBag.Title = "That's My Area Code!";
 }
 
+<style>
+    .btn {
+        background-color: #8000FF;
+       
+        width: 100px;
+    }
+</style>
 
     <!--Add padding above this-->
     <div class="wrapper" style="margin-top:20px">
@@ -31,7 +38,7 @@
                     @Html.ActionLink("Random", "Index", "Zingers", new { zingerGenre = "Random" }, new { @class = "btn" })
                     @Html.ActionLink("Romance", "Index", "Zingers", new { zingerGenre = "Romance" }, new { @class = "btn" })
                     @Html.ActionLink("Sports", "Index", "Zingers", new { zingerGenre = "Sports" }, new { @class = "btn" })
-                    @Html.ActionLink("Comedy", "Index", "Zingers", new { zingerGenre = "Comedy" }, new { @class = "btn" })
+                    
                 </div>
             </div>
         </div>
@@ -57,7 +64,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                 <input type="submit" value="Go There!" class="btn btn-success" />
-                                                <button type="button" class="btn btn-primary" id="allCodes">All Area Codes!</button>
+                                                <p>Leave the box blank to see <strong>ALL</strong> area codes.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -65,8 +72,8 @@
                                 @*Genre: @Html.DropDownList("zingerGenre", "All")*@
 
 
-                                @*User Name: @Html.TextBox("SearchString")
-                                <input type="submit" value="Filter" />*@
+                                User Name: @Html.TextBox("SearchString")
+                                <input type="submit" value="Filter" />
 
 
                                 <button type="button" class="btn btn-success"> @Html.ActionLink("Create New", "Create")</button>
