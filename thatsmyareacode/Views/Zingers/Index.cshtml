@@ -82,7 +82,8 @@
                 @Html.DisplayNameFor(model => model.ZingerMessage)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ZingerImage)
+                
+               <img src="@Html.DisplayNameFor(model => model.ZingerImage)" alt="Image" />
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ZingerUserName)
@@ -115,7 +116,7 @@
                             <td>
 
                                 <div class="well" id="zingerWells">
-                                    <span><h1>@Html.DisplayFor(modelItem => item.AreaCode): @Html.DisplayFor(modelItem => item.ZingerImage) @Html.DisplayFor(modelItem => item.ZingerMessage)</h1></span><span>@Html.DisplayFor(modelItem => item.TimeCreated)</span>
+                                    <span><h1>@Html.DisplayFor(modelItem => item.AreaCode): <img src="Url.Content(@Html.DisplayFor(modelItem => item.ZingerImage))" alt="Image"/> @Html.DisplayFor(modelItem => item.ZingerMessage)</h1></span><span>@Html.DisplayFor(modelItem => item.TimeCreated)</span>
                                     <br />
                                     <span>Genre: @Html.DisplayFor(modelItem => item.Genre)</span>
                                     <br />

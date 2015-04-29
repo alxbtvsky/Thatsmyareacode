@@ -4,84 +4,110 @@
     ViewBag.Title = "Create a Zinger";
 }
 
-<h1 style="font-family:'Bradley Hand ITC'; font:bold; font-size:100px">Create a Zinger</h1>
-<hr />
-<style>
-    textarea {
-        max-width: 98%;
-        max-height: 100%;
-        height: 100%;
-        width: 100%;
-        border-radius: 1em;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    #dropdown{
-        max-width: 100%;
-        max-height: 100%;
-        height: 35px;
-        width: 100%;
-        border-radius: 1em;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: auto;
-        margin-top: auto;
-    }
-</style>
-
-
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-horizontal">
-        
-
-        <div class="col-md-3">
-            @Html.EditorFor(model => model.ZingerImage, new { htmlAttributes = new { @class = "form-control", @placeholder = "Paste image url" } })
-            @Html.ValidationMessageFor(model => model.ZingerImage, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-3">
-            @Html.EditorFor(model => model.ZingerUserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Choose a Username" } })
-            @Html.ValidationMessageFor(model => model.ZingerUserName, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-3">
-            @Html.EditorFor(model => model.Genre, new { htmlAttributes = new { @class = "form-control", @placeholder = "Select a Genre" } })
-            @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
-        </div>
-        <div class="col-md-3">
-            @Html.DropDownList("AreaCode", new SelectList(new[] {"Select your Area Code"}), new { id = "dropdown" })
-            @Html.ValidationMessageFor(model => model.AreaCode, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    <h1 style="font-family:'Bradley Hand ITC'; font:bold; font-size:100px">Create a Zinger</h1>
     <hr />
-    <hr />
-    <br />
+    <style>
+        textarea {
+            max-width: 98%;
+            max-height: 100%;
+            height: 100%;
+            width: 100%;
+            border-radius: 1em;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #dropdown {
+            max-width: 100%;
+            max-height: 100%;
+            height: 35px;
+            width: 100%;
+            border-radius: 1em;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+    </style>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-horizontal">
+
+
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.ZingerImage, new { htmlAttributes = new { @class = "form-control", @placeholder = "Paste image url" } })
+                @Html.ValidationMessageFor(model => model.ZingerImage, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.ZingerUserName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Choose a Username" } })
+                @Html.ValidationMessageFor(model => model.ZingerUserName, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-3">
+                @Html.DropDownListFor(model => model.Genre, new SelectList(
+               new List<Object>{
+                   new {value = "Humor", text = "Humor"},
+                   new { value = "News" , text = "News" },
+                   new { value = "Popular" , text = "Popular" },
+                   new { value = "Random" , text = "Random" },
+                   new { value = "Romance" , text = "Romance" },
+                   new { value = "Sports" , text = "Sports" },
+                   new { value = "Comedy" , text = "Comedy"}
+                    },
+               "value",
+               "text",
+                2))
+          
+                @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })
+                @*@Html.DropDownList("Genre", new SelectList(GenreLst, "Select a Genre"), new { id = "dropdown" })
+                @Html.ValidationMessageFor(model => model.Genre, "", new { @class = "text-danger" })*@
+            </div>
+            <div class="col-md-3">
+                @Html.DropDownListFor(model => model.AreaCode, new SelectList(
+               new List<Object>{
+                   new {value = "502", text = "502"},
+                   new { value = "270" , text = "270" }
+                    },
+               "value",
+               "text",
+                2))
+                @*@Html.DropDownList("Areacode", new SelectList(AreacodeLst, "Select an Area Code"), new { id = "dropdown" })*@
+                @Html.ValidationMessageFor(model => model.AreaCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <hr />
+        <hr />
+        <br />
 
         <p style="text-align:center">Say something here!</p>
-  
-    <hr />
-    <div class="form-horizontal">
-            @Html.TextAreaFor(model => model.ZingerMessage, new { htmlAttributes = new { @class = "form-control", @placeholder = "Insert messsage here"} })
+
+        <hr />
+        <div class="form-horizontal">
+            @Html.TextAreaFor(model => model.ZingerMessage, new { htmlAttributes = new { @class = "form-control", @placeholder = "Insert messsage here" } })
             @Html.ValidationMessageFor(model => model.ZingerMessage, "", new { @class = "text-danger" })
-    </div>
-    <br />
+
+            @Html.EditorFor(model => model.TimeCreated, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TimeCreated, "", new { @class = "text-danger" })
+        </div>
+        <br />
         <div class="form-group">
             <div class=" col-md-12">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
+        <br />
+    }
     <br />
-}
-<br />
-<div>
-    @Html.ActionLink("Go back to Zingers", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Go back to Zingers", "Index")
+    </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

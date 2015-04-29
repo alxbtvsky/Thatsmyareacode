@@ -17,22 +17,21 @@ namespace thatsmyareacode.Controllers
         // GET: Zingers
         public ActionResult Index(string zingerGenre, string searchString, string zingerAreaCode)
         {
-            var GenreLst = new List<string>();
+            //var GenreLst = new List<string>();
 
-            GenreLst.Add("Humor");
-            GenreLst.Add("News");
-            GenreLst.Add("Popular");
-            GenreLst.Add("Random");
-            GenreLst.Add("Romance");
-            GenreLst.Add("Sports");
-           
+            //GenreLst.Add("Humor");
+            //GenreLst.Add("News");
+            //GenreLst.Add("Popular");
+            //GenreLst.Add("Random");
+            //GenreLst.Add("Romance");
+            //GenreLst.Add("Sports");        
 
-            var GenreQyr = from d in db.Zingers
-                           orderby d.Genre
-                           select d.Genre;
+            //var GenreQyr = from d in db.Zingers
+            //               orderby d.Genre
+            //               select d.Genre;
 
             /*GenreLst.AddRange(GenreQyr.Distinct());*/
-            ViewBag.zingerGenre = new SelectList(GenreLst);
+            //ViewBag.zingerGenre = new SelectList(GenreLst);
 
             var zingers = from z in db.Zingers
                           select z;
